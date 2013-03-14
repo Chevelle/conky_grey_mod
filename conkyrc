@@ -1,0 +1,98 @@
+background yes
+update_interval 1
+cpu_avg_samples 2
+net_avg_samples 2
+temperature_unit fahrenheit
+
+double_buffer yes
+no_buffers yes
+text_buffer_size 2048
+
+#gap_x 1400
+#gap_y 1400
+#minimum_size 240 650
+#maximum_width 300
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
+border_inner_margin 0
+border_outer_margin 0
+alignment tr
+
+draw_shades no
+draw_outline no
+draw_borders no
+draw_graph_borders no
+
+override_utf8_locale yes
+use_xft yes
+xftfont caviar dreams:size=8
+xftalpha 0.9
+uppercase no
+
+default_color FFFFFF
+color1 DDDDDD
+color2 AAAAAA
+color3 888888
+color4 666666
+
+
+
+
+lua_load ~/.conky/conky_grey.lua
+lua_draw_hook_post main
+
+TEXT
+${voffset 35}
+${goto 93}${color1}${font ubuntu:size=22}${time %e}
+${goto 88}${color1}${voffset -15}${font ubuntu:size=16}${time %b}
+
+${voffset 34}
+${goto 90}${font Ubuntu:size=7,weight:bold}${color}CPU
+${goto 90}${font Ubuntu:size=7,weight:normal}${color1}${top name 1}${goto 200}${top cpu 1}%
+${goto 90}${font Ubuntu:size=7,weight:normal}${color2}${top name 2}${goto 200}${top cpu 2}%
+${goto 90}${font Ubuntu:size=7,weight:normal}${color3}${top name 3}${goto 200}${top cpu 3}%
+
+${goto 90}${voffset -10}${font Ubuntu:size=7,weight:normal}${color}${threads} process 
+${voffset 20}
+${goto 90}${font Ubuntu:size=7,weight:bold}${color}MEM
+${goto 90}${font Ubuntu:size=7,weight:normal}${color1}${top_mem name 1}${goto 200}${top_mem mem 1}%
+${goto 90}${font Ubuntu:size=7,weight:normal}${color2}${top_mem name 2}${goto 200}${top_mem mem 2}%
+${goto 90}${font Ubuntu:size=7,weight:normal}${color3}${top_mem name 3}${goto 200}${top_mem mem 3}%
+
+${voffset 14}
+${goto 90}${font Ubuntu:size=7,weight:bold}${color}DISKS
+
+${goto 90}${font Ubuntu:size=7,weight:normal}${color}used: ${fs_used /home} /home
+${goto 90}${font Ubuntu:size=7,weight:normal}${color}used: ${fs_used /} /total disk
+
+${voffset 10}
+${goto 90}${font Ubuntu:size=7,weight:bold}${color1}NET${goto 120}${color2}${font Ubuntu:size=7,weight:bold}${color1}${if_up eth0}LAN ${addr eth0} ${endif}
+${goto 120}${if_up wlan0}WiFi ${addr wlan0}${endif}
+${voffset 25}
+${goto 90}${font Ubuntu:size=7,weight:bold}${color}Open Ports: ${goto 213}${color2}${tcp_portmon 1 65535 count}
+${voffset 5}
+${goto 90}${font Ubuntu:size=7,weight:bold}${color}${offset 10}IP${goto 200}DPORT
+${goto 90}${font Ubuntu:size=7,weight:normal}${color1}${tcp_portmon 1 65535 rip  0}${goto 210}${tcp_portmon 1 65535 rport  0}
+${goto 90}${font Ubuntu:size=7,weight:normal}${color1}${tcp_portmon 1 65535 rip  1}${goto 210}${tcp_portmon 1 65535 rport  1}
+${goto 90}${font Ubuntu:size=7,weight:normal}${color1}${tcp_portmon 1 65535 rip  2}${goto 210}${tcp_portmon 1 65535 rport  2}
+${goto 90}${font Ubuntu:size=7,weight:normal}${color1}${tcp_portmon 1 65535 rip  3}${goto 210}${tcp_portmon 1 65535 rport  3}
+${goto 90}${font Ubuntu:size=7,weight:normal}${color1}${tcp_portmon 1 65535 rip  4}${goto 210}${tcp_portmon 1 65535 rport  4}
+${goto 90}${font Ubuntu:size=7,weight:normal}${color1}${tcp_portmon 1 65535 rip  5}${goto 210}${tcp_portmon 1 65535 rport  5}
+${goto 90}${font Ubuntu:size=7,weight:normal}${color1}${tcp_portmon 1 65535 rip  6}${goto 210}${tcp_portmon 1 65535 rport  6}
+${goto 90}${font Ubuntu:size=7,weight:normal}${color1}${tcp_portmon 1 65535 rip  7}${goto 210}${tcp_portmon 1 65535 rport  7}
+${goto 90}${font Ubuntu:size=7,weight:normal}${color1}${tcp_portmon 1 65535 rip  8}${goto 210}${tcp_portmon 1 65535 rport  8}
+${goto 90}${font Ubuntu:size=7,weight:normal}${color1}${tcp_portmon 1 65535 rip  9}${goto 210}${tcp_portmon 1 65535 rport  9}
+${goto 90}${font Ubuntu:size=7,weight:normal}${color1}${tcp_portmon 1 65535 rip 10}${goto 210}${tcp_portmon 1 65535 rport 10}
+${goto 90}${font Ubuntu:size=7,weight:normal}${color1}${tcp_portmon 1 65535 rip 11}${goto 210}${tcp_portmon 1 65535 rport 11}
+${goto 90}${font Ubuntu:size=7,weight:normal}${color1}${tcp_portmon 1 65535 rip 12}${goto 210}${tcp_portmon 1 65535 rport 12}
+${goto 90}${font Ubuntu:size=7,weight:normal}${color1}${tcp_portmon 1 65535 rip 13}${goto 210}${tcp_portmon 1 65535 rport 13}
+${goto 90}${font Ubuntu:size=7,weight:normal}${color1}${tcp_portmon 1 65535 rip 14}${goto 210}${tcp_portmon 1 65535 rport 14}
+#la linea siguiente es para extender la anchura del conky
+${goto 260}${font Ubuntu:size=7,weight:normal}
+${image ~/.conky/pr.png -p 2,-1}
+#${image ~/.conky/pr.png -p 30,0 -s 230x702}
+${voffset 226}
+#${goto 73}${cpugauge 24, 95}
+${goto 73}${cpugraph 24, 92 67C2FE DDDDDD}
