@@ -64,9 +64,10 @@ ${goto 90}${font Ubuntu:size=7,weight:bold}${color}DISKS
 ${goto 90}${font Ubuntu:size=7,weight:normal}${color}used: ${fs_used /home} /home
 ${goto 90}${font Ubuntu:size=7,weight:normal}${color}used: ${fs_used /} /total disk
 
-${voffset 10}
-${goto 90}${font Ubuntu:size=7,weight:bold}${color1}NET${goto 120}${color2}${font Ubuntu:size=7,weight:bold}${color1}${if_up eth0}LAN ${addr eth0} ${endif}
-${goto 120}${if_up wlan0}WiFi ${addr wlan0}${endif}
+${voffset 5}
+${goto 90}${font Ubuntu:size=7,weight:bold}${color1}NET
+${goto 100}${color2}${font Ubuntu:size=7,weight:bold}${color1}${if_up eth0}lan  ${addr eth0}${endif}
+${goto 100}${if_up wlan0}wifi ${addr wlan0}${endif}
 ${voffset 25}
 ${goto 90}${font Ubuntu:size=7,weight:bold}${color}Open Ports: ${goto 213}${color2}${tcp_portmon 1 65535 count}
 ${voffset 5}
