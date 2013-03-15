@@ -86,7 +86,6 @@ ${goto 90}${font Ubuntu:size=7,weight:normal}${color1}${tcp_portmon 1 65535 rip 
 ${goto 90}${font Ubuntu:size=7,weight:normal}${color1}${tcp_portmon 1 65535 rip 11}${goto 210}${tcp_portmon 1 65535 rport 11}
 ${goto 90}${font Ubuntu:size=7,weight:normal}${color1}${tcp_portmon 1 65535 rip 12}${goto 210}${tcp_portmon 1 65535 rport 12}
 ${goto 90}${font Ubuntu:size=7,weight:normal}${color1}${tcp_portmon 1 65535 rip 13}${goto 210}${tcp_portmon 1 65535 rport 13}
-${goto 90}${font Ubuntu:size=7,weight:normal}${color1}${tcp_portmon 1 65535 rip 14}${goto 210}${tcp_portmon 1 65535 rport 14}
 
 ${goto 260}${font Ubuntu:size=7,weight:normal}
 ${image ~/.conky/pr.png -p 2,-1}

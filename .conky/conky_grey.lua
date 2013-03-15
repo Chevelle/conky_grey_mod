@@ -14,7 +14,7 @@ require 'cairo'
 -- HOURS
 clock_h = {
     {
-    name='time',                   arg='%H',                    max_value=12,
+    name='time',                   arg='%I',                    max_value=12,
     x=110,                         y=80,
     graph_radius=53,
     graph_thickness=3,
